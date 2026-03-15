@@ -9,7 +9,14 @@
             "hash": "F7A6D7B9DD620FF27A03C1B2062CE046181AE6493100A7EA4ED90C81B76B71FC"
         }
     },
+    "pre_install": [
+        "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal",
+        "Remove-Item \"$dir\\`$PLUGINSDIR\", \"$dir\\`$R0\" -Recurse -Force -ErrorAction SilentlyContinue"
+    ],
     "bin": "Lune.exe",
+    "shortcuts": [
+        ["Lune.exe", "Lune"]
+    ],
     "checkver": "github",
     "autoupdate": {
         "architecture": {
